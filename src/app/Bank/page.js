@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { icons } from '../assets/icons';
+import { icons } from '../../assets/icons';
 import MerchantEcoChart from '@/components/TopMerchant';
 import DougnutChart from '@/components/DougnutChart';
 import LineChart from '@/components/LineChart';
@@ -29,7 +29,6 @@ export default function Home() {
           throw new Error('Failed to fetch data');
         }
         const data = await res.json();
-        console.log(data,"data")
         setData(data);
         setLoading(false);
       } catch (error) {

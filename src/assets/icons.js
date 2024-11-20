@@ -1,0 +1,3 @@
+export const icons={
+    light:<svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19.5" cy="19.5" r="19" fill="white"></circle><g clipPath="url(#clip0_257_435)"><path d="M12.9542 20.6787L20.7511 9.88307C21.2668 9.16898 22.3935 9.63911 22.2487 10.508L21.1667 17H25.3702C26.05 17 26.4438 17.7701 26.0458 18.3212L18.2489 29.1169C17.7332 29.831 16.6065 29.3609 16.7513 28.492L17.8333 22H13.6298C12.95 22 12.5562 21.2299 12.9542 20.6787Z" fill="#fea022"></path></g><defs><clipPath id="clip0_257_435"><rect width="20" height="20" fill="white" transform="translate(9.5 9.5)"></rect></clipPath></defs></svg>
+}

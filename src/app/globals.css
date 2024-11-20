@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --pr-color:#fea022
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +25,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .pr-color{
+    color:#fea022
+  }
+
 }

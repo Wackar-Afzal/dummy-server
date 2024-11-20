@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { icons } from '../assets/icons';
+import { icons } from '../../../assets/icons';
 import MerchantEcoChart from '@/components/TopMerchant';
 import DougnutChart from '@/components/DougnutChart';
 import LineChart from '@/components/LineChart';
@@ -8,7 +8,7 @@ import ThreeBarChart from '@/components/ThreeBarChart';
 import { HtmlToImage } from '@/utils/HtmlToPng';
 
 
-export default function Home() {
+export default function Page() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,12 +24,12 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('/api/transctions', { cache: 'no-store' });
+        const res = await fetch(`http://localhost:3000/api/transctions?groupId=group_001`, { cache: 'no-store' })
+
         if (!res.ok) {
           throw new Error('Failed to fetch data');
         }
         const data = await res.json();
-        console.log(data,"data")
         setData(data);
         setLoading(false);
       } catch (error) {
@@ -88,7 +88,7 @@ export default function Home() {
       </div>
       <div className='flex mt-4 mb-4'>
       <div>
-      <p className='p-4'>A total of <span className='pr-color font-bold'>{filteredData.totalCustomers}</span> customers completed <span className='pr-color font-bold'>{filteredData.totalTransactions}</span> transactions collectively, reducing carbon emissions by <span className='pr-color font-bold'>{(filteredData.totalCo2Saved/1000).toFixed(2)}</span> tons while producing <span className='pr-color font-bold'>{(filteredData.totalCo2Emitted/1000).toFixed(2)}</span> tons</p>
+      <p className='p-4'>Group ABC completed <span className='pr-color font-bold'>{filteredData.totalTransactions}</span> transactions collectively, reducing carbon emissions by <span className='pr-color font-bold'>{filteredData.totalCo2Saved}</span> tons while producing <span className='pr-color font-bold'>{filteredData.totalCo2Emitted}</span> tons</p>
       <div className='flex justify-between gap-5 m-4'>
         <div className='w-[33%] bg-gray-100 flex flex-col justify-center gap-4 items-center shadow-lg'>
           {icons.light}
